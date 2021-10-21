@@ -1,6 +1,5 @@
 var bg1,g1,g2,g3,g4;
 var targetImg,targetGroup,crossHair,crossHairImg;
-var score=0;
 
 function preload () {
   bg1 = loadImage("Shooting range1.jpeg");
@@ -40,9 +39,9 @@ function draw() {
     crossHair.y = World.mouseY;
     crossHair.x= World.mouseX;
 
-    if(mousePressedOver(targetGroup)){ 
-      targetGroup.destoryEach();    
-    }
+  if(crossHair.isTouching(targetGroup)){
+    targetGroup.destroyEach();
+  }
 
       drawSprites();
   }
@@ -63,5 +62,4 @@ function draw() {
 
 
   
-
 
